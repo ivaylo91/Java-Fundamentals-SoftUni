@@ -7,7 +7,7 @@ public class PassedOrFailed {
         Scanner input = new Scanner(System.in);
         double grade = Double.parseDouble(input.nextLine());
 
-        if (grade >= 2.99) {
+        if (grade > 2.99) {
             System.out.println("Passed!");
         } else {
             System.out.println("Failed!");
