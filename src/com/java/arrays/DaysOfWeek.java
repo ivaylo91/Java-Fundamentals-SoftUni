@@ -16,7 +16,7 @@ public class DaysOfWeek {
                 "Sunday"
         };
         if (day >= 0 && day <= 7) {
-            System.out.println(daysOfWeek[day-1]);
+            System.out.println(daysOfWeek[day]);
         } else {
             System.out.println("Invalid Day");
         }
