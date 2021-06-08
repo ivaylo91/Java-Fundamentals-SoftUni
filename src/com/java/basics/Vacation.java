@@ -4,40 +4,78 @@ import java.util.Scanner;
 
 public class Vacation {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int people = input.nextInt();
-        String kind = input.nextLine();
-        String day = input.nextLine();
-        double price = 0;
+        Scanner read = new Scanner(System.in);
 
-        if (day == "Friday" && kind == "Students") {
-            price = people * 8.45;
-        } else if (day == "Friday" && kind == "Business") {
-            price = people * 10.90;
-        } else if (day == "Friday" && kind == "Regular") {
-            price = people * 15;
-        } else if (day == "Saturday" && kind == "Students") {
-            price = people * 9.80;
-        } else if (day == "Saturday" && kind == "Business") {
-            price = people * 15.60;
-        } else if (day == "Saturday" && kind == "Regular") {
-            price = people * 20.00;
-        } else if (day == "Sunday" && kind == "Students") {
-            price = people * 10.46;
-        } else if (day == "Sunday" && kind == "Business") {
-            price = people * 16.00;
-        } else if (day == "Sunday" && kind == "Regular") {
-            price = people * 22.50;
+        int people = Integer.parseInt(read.nextLine());
+        String type = read.nextLine();
+        String days = read.nextLine();
+
+        double students = 0;
+        double business = 0;
+        double regular = 0;
+
+        if (days.equalsIgnoreCase("Friday")){
+            switch (type){
+                case "Students":
+                    students+=people*8.45;
+                    break;
+                case "Business":
+                    business+=people*10.90;
+                    break;
+                case "Regular":
+                    regular+=people*15.00;
+                    break;
+            }
+        }else if (days.equalsIgnoreCase("Saturday")){
+            switch (type) {
+                case "Students":
+                    students+=people*9.80;
+                    break;
+                case "Business":
+                    business+=people*15.60;
+                    break;
+                case "Regular":
+                    regular+=people*20.00;
+                    break;
+            }
+        }else if (days.equalsIgnoreCase("Sunday")){
+            switch (type) {
+                case "Students":
+                    students+=people*10.46;
+                    break;
+                case "Business":
+                    business+=people*16.00;
+                    break;
+                case "Regular":
+                    regular+=people*22.50;
+                    break;
+            }
         }
 
-
-        if (people >= 30 && kind == "Students") {
-            price = price - 0.15 * price;
-        } else if (people >= 100 && kind == "Business") {
-            price = price - (price / people * 10);
-        } else if (people >= 10 && people <= 20 && kind == "Regular") {
-            price = price - 0.05 * price;
+        if (type.equalsIgnoreCase("Students")&&people>=30){
+            students=students-(students*0.15);
+            System.out.printf("Total price: %.2f",students);
+        }else if (type.equalsIgnoreCase("Students")&&people<30){
+            System.out.printf("Total price: %.2f",students);
         }
-        System.out.printf("Total price:%.2f", price);
+        else if (type.equalsIgnoreCase("Business")&&people>=100){
+            if (days.equalsIgnoreCase("Friday"))
+                business=business-(10*10.90);
+            else if (days.equalsIgnoreCase("Saturday")){
+                business=business-(10*15.60);
+            }else {
+                business=business-(10*16.00);
+            }
+            System.out.printf("Total price: %.2f",business);
+        }else if (type.equalsIgnoreCase("Business")&&people<100){
+            System.out.printf("Total price: %.2f",business);
+        }
+        else if (type.equalsIgnoreCase("Regular")&&people>=10&&people<=20){
+            regular-=regular*0.05;
+            System.out.printf("Total price: %.2f",regular);
+        }else if (type.equalsIgnoreCase("Regular")&&people<10||people>20){
+            System.out.printf("Total price: %.2f",regular);
+        }
+
     }
 }
