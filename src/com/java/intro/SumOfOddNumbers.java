@@ -13,6 +13,6 @@ public class SumOfOddNumbers {
                 sum += i;
             }
         }
-        System.out.printf("Sum of odd numbers is: %d", sum);
+        System.out.printf("Sum: %d", sum);
     }
 }

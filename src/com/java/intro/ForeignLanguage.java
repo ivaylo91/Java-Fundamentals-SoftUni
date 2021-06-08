@@ -9,6 +9,8 @@ public class ForeignLanguage {
 
         if (countryName.equals("USA")) {
             System.out.println("English");
+        }else if (countryName.equals("England")){
+            System.out.println("English");
         } else if (countryName.equals("Argentina")) {
             System.out.println("Spanish");
         } else if (countryName.equals("Spain")) {
@@ -19,5 +21,4 @@ public class ForeignLanguage {
             System.out.println("unknown");
         }
     }
-
 }

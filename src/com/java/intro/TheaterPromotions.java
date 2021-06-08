@@ -7,7 +7,7 @@ public class TheaterPromotions {
         Scanner input = new Scanner(System.in);
         String typeOfDay = input.nextLine();
         int age = input.nextInt();
-        double price = 0.0;
+        int price = 0;
 
         if (typeOfDay.equals("Weekday")) {
             if ((age >= 0 && age <= 18) || (age > 64 && age <= 122)) {
@@ -31,7 +31,7 @@ public class TheaterPromotions {
             }
         }
         if (price != 0) {
-            System.out.println(price);
+            System.out.printf("%d$",price);
         } else {
             System.out.println("Error!");
         }

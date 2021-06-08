@@ -9,7 +9,7 @@ public class StudentsInfo {
         int age = Integer.parseInt(input.nextLine());
         double grade = Double.parseDouble(input.nextLine());
 
-        System.out.printf("Name: %s, Age:%d Grade: %.2f", name, age, grade);
+        System.out.printf("Name: %s, Age: %d, Grade: %.2f", name, age, grade);
 
     }
 }

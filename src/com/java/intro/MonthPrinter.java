@@ -20,10 +20,10 @@ public class MonthPrinter {
                 "November",
                 "December"
         };
-        if (monthNumber <= months.length - 1) {
+        if (monthNumber <= months.length-1) {
             System.out.println(months[monthNumber - 1]);
         } else {
-            System.out.println("Error!Invalid input");
+            System.out.println("Error!");
         }
     }
 
